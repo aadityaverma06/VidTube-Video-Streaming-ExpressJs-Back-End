@@ -65,7 +65,7 @@ As this is a Back-End only App, use of Postman is advised to access the routes.
 ![Playlists Routes](./src/images/playlists.postman.png)
 ![Subscriptions Routes](./src/images/subscriptions.postman.png)
 ![Tweets Routes](./src/images/tweets.postman.png)
-![HealthCheck Route](./src/images/healthcheck.postman.png)
+![HealthCheck Route](./src/images/healthCheck.postman.png)
 ![Dashboard Routes](./src/images/dashboard.postman.png)
 ![Videos Routes](./src/images/videos.postman.png)
 
