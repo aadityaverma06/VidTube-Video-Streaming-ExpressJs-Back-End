@@ -57,18 +57,6 @@ The Web App designed is inspired by the renowned Youtube Video Streaming service
 
 As this is a Back-End only App, use of Postman is advised to access the routes. The Database documents are provided in a PDF File for testing purposes.
 
-## 📸 Screenshots of Routes in Postman
-
-![User Routes](./src/images/user.postman.png)
-![Comments Routes](./src/images/comments.postman.png)
-![Likes Routes](./src/images/likes.postman.png)
-![Playlists Routes](./src/images/playlists.postman.png)
-![Subscriptions Routes](./src/images/subscriptions.postman.png)
-![Tweets Routes](./src/images/tweets.postman.png)
-![HealthCheck Route](./src/images/healthCheck.postman.png)
-![Dashboard Routes](./src/images/dashboard.postman.png)
-![Videos Routes](./src/images/videos.postman.png)
-
 ## 🔗 Routes
 
 Here is the list of all routes
