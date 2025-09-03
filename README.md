@@ -382,7 +382,7 @@ GET api/v1/users/watch-history
 
 ### Comments Routes
 
-#### 1.Get Video Comments
+#### 1. Get Video Comments
 
 ```bash
 GET api/v1/comments/:videoId?page=2&limit=2
@@ -429,7 +429,7 @@ GET api/v1/comments/:videoId?page=2&limit=2
 }
 ```
 
-#### 2.Add Video Comment
+#### 2. Add Video Comment
 
 ```bash
 POST - POST api/v1/comments/:videoId
@@ -453,7 +453,7 @@ POST - POST api/v1/comments/:videoId
 }
 ```
 
-#### 4.Update Comment
+#### 3. Update Comment
 
 ```bash
 PATCH api/v1/comments/:commentId
@@ -478,7 +478,7 @@ PATCH api/v1/comments/:commentId
 }
 ```
 
-#### 4.Delete Comment
+#### 4. Delete Comment
 
 ```bash
 DELETE api/v1/comments/:commentId
