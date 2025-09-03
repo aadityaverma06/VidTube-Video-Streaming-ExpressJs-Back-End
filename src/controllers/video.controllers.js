@@ -185,6 +185,14 @@ const updateVideo = asyncHandler(async (req, res) => {
   const videoFilePath = req.file?.path;
 
   const oldVideo = await Video.findById(videoId);
+  console.log(oldVideo.owner, req.user._id);
+
+  if (oldVideo.owner.toString() != req.user._id.toString()) {
+    throw new apiError(
+      403,
+      "You are not authorized to update this video as you are not the owner"
+    );
+  }
 
   if (!oldVideo) {
     throw new apiError(404, "Video not found");
@@ -271,6 +279,12 @@ const deleteVideo = asyncHandler(async (req, res) => {
   }
 
   const video = await Video.findById(videoId);
+  if (video.owner.toString() != req.user._id.toString()) {
+    throw new apiError(
+      403,
+      "You are not authorized to delete this video as you are not the owner"
+    );
+  }
 
   if (!video) {
     throw new apiError(404, "Video not found");
@@ -299,6 +313,12 @@ const togglePublishStatus = asyncHandler(async (req, res) => {
   }
 
   const video = await Video.findById(videoId);
+  if (video.owner.toString() != req.user._id.toString()) {
+    throw new apiError(
+      403,
+      "You are not authorized to toggle this video publish status as you are not the owner"
+    );
+  }
 
   if (!video) {
     throw new apiError(404, "Video not found");
