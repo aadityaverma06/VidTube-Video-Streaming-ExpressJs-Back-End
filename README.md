@@ -93,7 +93,7 @@ GET api/v1/healthCheck
 #### 1. Register User
 
 ##### 📸 Screenshot
-![Register User](./src/images/Register-User.png)
+![Register User](./src/images/Register-User.jpg)
 
 ```bash
  POST api/v1/users/register
@@ -125,7 +125,7 @@ GET api/v1/healthCheck
 POST api/v1/users/login
 ```
 ##### 📸 Screenshot
-![Login User](./src/images/Login-User.png)
+![Login User](./src/images/Login-User.jpg)
 ```json
 {
   "statusCode": 200,
@@ -173,8 +173,8 @@ POST api/v1/users/refresh-token
 {
   "statusCode": 200,
   "data": {
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODZjYWQ0NWE0MWI0Y2QzYjg5NzkwOWIiLCJlbWFpbCI6InVzZXIxQHRlc3QuY29tIiwidXNlcm5hbWUiOiJ1c2VyMSIsImZ1bGxOYW1lIjoiVXNlciBPbmUiLCJpYXQiOjE3NTY4MDg3MDUsImV4cCI6MTc1NjgxMjMwNX0.Ws7grn_8VjLofc_pMg6UwU_ugiqYYDNchy_tJKInjdQ",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODZjYWQ0NWE0MWI0Y2QzYjg5NzkwOWIiLCJpYXQiOjE3NTY4MDg3MDUsImV4cCI6MTc1Njg0NDcwNX0.qQXZl16u-D8NVao8IsR37s4rO76HtAED7O9bq6mrGeo"
+    "accessToken": "hashed",
+    "refreshToken": "hashed"
   },
   "message": "Access Token Refreshed Successfully",
   "success": true
@@ -187,7 +187,7 @@ POST api/v1/users/refresh-token
 POST api/v1/users/change-password
 ```
 ##### 📸 Screenshot
-![Change Password](./src/images/Change-Password.png)
+![Change Password](./src/images/Change-Password.jpg)
 ```json
 {
   "statusCode": 200,
