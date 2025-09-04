@@ -1483,6 +1483,6 @@ PATCH api/v1/videos/toggle-publish-status/:videoId
 npm run dev
 ```
 
-### 🌐 Using Vercel Link
+### 🌐 Using Render Link
 
-https://password-generator-eta-cyan-16.vercel.app/
+https://vidtube-video-streaming-expressjs-back.onrender.com/
