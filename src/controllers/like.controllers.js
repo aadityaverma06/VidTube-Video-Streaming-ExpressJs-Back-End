@@ -152,17 +152,13 @@ const getLikedVideos = asyncHandler(async (req, res) => {
         video: {
           $exists: true,
         },
-      },
-    },
-    {
-      $group: {
-        _id: "$video",
+        likedBy: req.user._id,
       },
     },
     {
       $lookup: {
         from: "videos",
-        localField: "_id",
+        localField: "video",
         foreignField: "_id",
         as: "video",
       },

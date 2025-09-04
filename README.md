@@ -55,13 +55,13 @@ The Web App designed is inspired by the renowned Youtube Video Streaming service
 
 ## 🚀 Getting Started
 
-As this is a Back-End only App, use of Postman is advised to access the routes. The Database documents are provided in a PDF File for testing purposes.
+As this is a Back-End only App, use of Postman is advised to access the routes, The App is deployed on Render (Free Tier), so initial calls might take some time, once the server is up and running, all subsequent requests will be fulfilled seamlessly. The Routes are divided into Protected and Unprotected, therefore, Protected Routes require authentication, so create or login into your account accordingly. The Database documents are provided in a PDF File for testing purposes.
 
 ## 🔗 Routes
 
 Here is the list of all routes
 
-### HealthCheck Route
+### HealthCheck Route (Unprotected)
 
 ```bash
 GET api/v1/healthCheck
@@ -78,9 +78,10 @@ GET api/v1/healthCheck
 
 ### User Routes
 
-#### 1. Register User
+#### 1. Register User (Unprotected)
 
 ##### 📸 Screenshot
+
 ![Register User](./src/images/Register-User.jpg)
 
 ```bash
@@ -107,13 +108,16 @@ GET api/v1/healthCheck
 }
 ```
 
-#### 2. Login User
+#### 2. Login User (Unprotected)
 
 ```bash
 POST api/v1/users/login
 ```
+
 ##### 📸 Screenshot
+
 ![Login User](./src/images/Login-User.jpg)
+
 ```json
 {
   "statusCode": 200,
@@ -136,7 +140,7 @@ POST api/v1/users/login
 }
 ```
 
-#### 3. Logout User
+#### 3. Logout User (Protected)
 
 ```bash
 POST api/v1/users/logout
@@ -151,7 +155,7 @@ POST api/v1/users/logout
 }
 ```
 
-#### 4. Refresh Token
+#### 4. Refresh Token (Unprotected)
 
 ```bash
 POST api/v1/users/refresh-token
@@ -169,13 +173,16 @@ POST api/v1/users/refresh-token
 }
 ```
 
-#### 5. Change Password
+#### 5. Change Password (Protected)
 
 ```bash
 POST api/v1/users/change-password
 ```
+
 ##### 📸 Screenshot
+
 ![Change Password](./src/images/Change-Password.jpg)
+
 ```json
 {
   "statusCode": 200,
@@ -185,7 +192,7 @@ POST api/v1/users/change-password
 }
 ```
 
-#### 6. Get Current User
+#### 6. Get Current User (Protected)
 
 ```bash
 GET api/v1/users/current-user
@@ -211,13 +218,16 @@ GET api/v1/users/current-user
 }
 ```
 
-#### 7. Update Account Details
+#### 7. Update Account Details (Protected)
 
 ```bash
 PATCH api/v1/users/update-account
 ```
+
 ##### 📸 Screenshot
+
 ![Update Account Details](./src/images/Update-Account-Details.png)
+
 ```json
 {
   "statusCode": 200,
@@ -238,13 +248,16 @@ PATCH api/v1/users/update-account
 }
 ```
 
-#### 8. Update Avatar
+#### 8. Update Avatar (Protected)
 
 ```bash
 PATCH api/v1/users/update-avatar
 ```
+
 ##### 📸 Screenshot
+
 ![Update Avatar](./src/images/Update-Avatar.png)
+
 ```json
 {
   "statusCode": 200,
@@ -265,12 +278,14 @@ PATCH api/v1/users/update-avatar
 }
 ```
 
-#### 9. Update Cover Image
+#### 9. Update Cover Image (Protected)
 
 ```bash
 PATCH api/v1/users/update-cover-image
 ```
+
 ##### 📸 Screenshot
+
 ![Update Cover Image](./src/images/Update-Cover-Image.png)
 
 ```json
@@ -293,7 +308,7 @@ PATCH api/v1/users/update-cover-image
 }
 ```
 
-#### 10. User Profile
+#### 10. User Profile (Protected)
 
 ```bash
 GET api/v1/users/profile/:username
@@ -318,7 +333,7 @@ GET api/v1/users/profile/:username
 }
 ```
 
-#### 11. Watch History
+#### 11. Watch History (Protected)
 
 ```bash
 GET api/v1/users/watch-history
@@ -370,12 +385,14 @@ GET api/v1/users/watch-history
 
 ### Comments Routes
 
-#### 1. Get Video Comments
+#### 1. Get Video Comments (Unprotected)
 
 ```bash
 GET api/v1/comments/:videoId?page=2&limit=2
 ```
+
 ##### 📸 Screenshot
+
 ![Get Video Comments](./src/images/Get-Video-Comments.png)
 
 ```json
@@ -417,13 +434,16 @@ GET api/v1/comments/:videoId?page=2&limit=2
 }
 ```
 
-#### 2. Add Video Comment
+#### 2. Add Video Comment (Protected)
 
 ```bash
 POST - POST api/v1/comments/:videoId
 ```
+
 ##### 📸 Screenshot
+
 ![Add Comment](./src/images/Add-Comment.png)
+
 ```json
 {
   "statusCode": 201,
@@ -441,12 +461,14 @@ POST - POST api/v1/comments/:videoId
 }
 ```
 
-#### 3. Update Comment
+#### 3. Update Comment (Protected)
 
 ```bash
 PATCH api/v1/comments/:commentId
 ```
+
 ##### 📸 Screenshot
+
 ![Update Comment](./src/images/Update-Comment.png)
 
 ```json
@@ -466,7 +488,7 @@ PATCH api/v1/comments/:commentId
 }
 ```
 
-#### 4. Delete Comment
+#### 4. Delete Comment (Protected)
 
 ```bash
 DELETE api/v1/comments/:commentId
@@ -493,7 +515,7 @@ DELETE api/v1/comments/:commentId
 
 - POST api/v1/likes/video/:videoId (Toggle Video Like)
 
-#### 1. Toggle Video Like
+#### 1. Toggle Video Like (Protected)
 
 ```bash
 api/v1/likes/video/:videoId
@@ -515,7 +537,7 @@ api/v1/likes/video/:videoId
 }
 ```
 
-#### 2. Toggle Comment Like
+#### 2. Toggle Comment Like (Protected)
 
 ```bash
 api/v1/likes/video/:commentId
@@ -537,7 +559,7 @@ api/v1/likes/video/:commentId
 }
 ```
 
-#### 3. Toggle Tweet Like
+#### 3. Toggle Tweet Like (Protected)
 
 ```bash
 api/v1/likes/video/:tweetId
@@ -559,7 +581,7 @@ api/v1/likes/video/:tweetId
 }
 ```
 
-#### 4. Get All Liked Videos
+#### 4. Get All Liked Videos (Protected)
 
 ```bash
 GET api/v1/likes/liked-videos
@@ -571,126 +593,7 @@ GET api/v1/likes/liked-videos
   "data": {
     "docs": [
       {
-        "_id": "686cbdcea41b4cd3b89790fb",
-        "video": {
-          "_id": "686cbdcea41b4cd3b89790fb",
-          "videoFile": "http://res.cloudinary.com/aaditya06/video/upload/v1751956941/vumlgai3yridin7vgl3k.mp4",
-          "thumbnail": "https://res.cloudinary.com/aaditya06/video/upload/so_auto/vumlgai3yridin7vgl3k.jpg?_a=BAMAK+M20",
-          "title": "Cyberpunk 2077 (1user5)",
-          "description": "Live Wallpaper (1user5)",
-          "views": 0,
-          "duration": 30.033333,
-          "isPublished": true,
-          "owner": "686cadb7a41b4cd3b89790ab",
-          "createdAt": "2025-07-08T06:42:22.806Z",
-          "updatedAt": "2025-07-08T06:42:22.806Z",
-          "__v": 0
-        }
-      },
-      {
-        "_id": "686cbdaaa41b4cd3b89790f2",
-        "video": {
-          "_id": "686cbdaaa41b4cd3b89790f2",
-          "videoFile": "http://res.cloudinary.com/aaditya06/video/upload/v1751956904/gydkmvpyifwdtxlotfby.mp4",
-          "thumbnail": "https://res.cloudinary.com/aaditya06/video/upload/so_auto/gydkmvpyifwdtxlotfby.jpg?_a=BAMAK+M20",
-          "title": "Cyberpunk 2077 (2user4)",
-          "description": "Live Wallpaper (2user4)",
-          "views": 0,
-          "duration": 30.033333,
-          "isPublished": true,
-          "owner": "686cada8a41b4cd3b89790a7",
-          "createdAt": "2025-07-08T06:41:46.770Z",
-          "updatedAt": "2025-07-08T06:41:46.770Z",
-          "__v": 0
-        }
-      },
-      {
-        "_id": "686cbd51a41b4cd3b89790e3",
-        "video": {
-          "_id": "686cbd51a41b4cd3b89790e3",
-          "videoFile": "http://res.cloudinary.com/aaditya06/video/upload/v1751956815/qs07lapkywsdofdqwrxr.mp4",
-          "thumbnail": "https://res.cloudinary.com/aaditya06/video/upload/so_auto/qs07lapkywsdofdqwrxr.jpg?_a=BAMAK+M20",
-          "title": "Cyberpunk 2077 (1user3)",
-          "description": "Live Wallpaper (1user3)",
-          "views": 0,
-          "duration": 30.033333,
-          "isPublished": true,
-          "owner": "686cad97a41b4cd3b89790a3",
-          "createdAt": "2025-07-08T06:40:17.571Z",
-          "updatedAt": "2025-07-08T06:40:17.571Z",
-          "__v": 0
-        }
-      },
-      {
-        "_id": "686cbd11a41b4cd3b89790d7",
-        "video": {
-          "_id": "686cbd11a41b4cd3b89790d7",
-          "videoFile": "http://res.cloudinary.com/aaditya06/video/upload/v1751956750/oj8rsus4wppq4s9qythi.mp4",
-          "thumbnail": "https://res.cloudinary.com/aaditya06/video/upload/so_auto/oj8rsus4wppq4s9qythi.jpg?_a=BAMAK+M20",
-          "title": "Cyberpunk 2077 (1user2)",
-          "description": "Live Wallpaper (1user2)",
-          "views": 0,
-          "duration": 30.033333,
-          "isPublished": true,
-          "owner": "686cad83a41b4cd3b897909f",
-          "createdAt": "2025-07-08T06:39:13.074Z",
-          "updatedAt": "2025-07-08T06:39:13.074Z",
-          "__v": 0
-        }
-      },
-      {
-        "_id": "686cbd66a41b4cd3b89790e6",
-        "video": {
-          "_id": "686cbd66a41b4cd3b89790e6",
-          "videoFile": "http://res.cloudinary.com/aaditya06/video/upload/v1751956835/xjmpgqawkqk0ryxpl1c4.mp4",
-          "thumbnail": "https://res.cloudinary.com/aaditya06/video/upload/so_auto/xjmpgqawkqk0ryxpl1c4.jpg?_a=BAMAK+M20",
-          "title": "Cyberpunk 2077 (2user3)",
-          "description": "Live Wallpaper (2user3)",
-          "views": 0,
-          "duration": 30.033333,
-          "isPublished": true,
-          "owner": "686cad97a41b4cd3b89790a3",
-          "createdAt": "2025-07-08T06:40:38.154Z",
-          "updatedAt": "2025-07-08T06:40:38.154Z",
-          "__v": 0
-        }
-      },
-      {
-        "_id": "686cbd97a41b4cd3b89790ef",
-        "video": {
-          "_id": "686cbd97a41b4cd3b89790ef",
-          "videoFile": "http://res.cloudinary.com/aaditya06/video/upload/v1751956885/kwv5l2welugy3q9pzbfi.mp4",
-          "thumbnail": "https://res.cloudinary.com/aaditya06/video/upload/so_auto/kwv5l2welugy3q9pzbfi.jpg?_a=BAMAK+M20",
-          "title": "Cyberpunk 2077 (1user4)",
-          "description": "Live Wallpaper (1user4)",
-          "views": 0,
-          "duration": 30.033333,
-          "isPublished": true,
-          "owner": "686cada8a41b4cd3b89790a7",
-          "createdAt": "2025-07-08T06:41:27.363Z",
-          "updatedAt": "2025-07-08T06:41:27.363Z",
-          "__v": 0
-        }
-      },
-      {
-        "_id": "686cbc62a41b4cd3b89790c8",
-        "video": {
-          "_id": "686cbc62a41b4cd3b89790c8",
-          "videoFile": "http://res.cloudinary.com/aaditya06/video/upload/v1751956576/qerouopvrnzphdpdyjgm.mp4",
-          "thumbnail": "https://res.cloudinary.com/aaditya06/video/upload/so_auto/qerouopvrnzphdpdyjgm.jpg?_a=BAMAK+M20",
-          "title": "Cyberpunk 2077 (1user1)",
-          "description": "Live Wallpaper (1user1)",
-          "views": 5,
-          "duration": 30.033333,
-          "isPublished": true,
-          "owner": "686cad45a41b4cd3b897909b",
-          "createdAt": "2025-07-08T06:36:18.087Z",
-          "updatedAt": "2025-07-11T06:32:37.672Z",
-          "__v": 0
-        }
-      },
-      {
-        "_id": "686cbe09a41b4cd3b89790fe",
+        "_id": "68b7ca81eb077b8d23582917",
         "video": {
           "_id": "686cbe09a41b4cd3b89790fe",
           "videoFile": "http://res.cloudinary.com/aaditya06/video/upload/v1751956999/j2mawjywhkblptlvygwi.mp4",
@@ -704,44 +607,35 @@ GET api/v1/likes/liked-videos
           "createdAt": "2025-07-08T06:43:21.692Z",
           "updatedAt": "2025-07-08T06:43:21.692Z",
           "__v": 0
-        }
+        },
+        "likedBy": "686cad45a41b4cd3b897909b",
+        "createdAt": "2025-09-03T04:56:33.523Z",
+        "updatedAt": "2025-09-03T04:56:33.523Z",
+        "__v": 0
       },
       {
-        "_id": "686cbcb5a41b4cd3b89790ce",
+        "_id": "68b923409690013eca561b97",
         "video": {
-          "_id": "686cbcb5a41b4cd3b89790ce",
-          "videoFile": "http://res.cloudinary.com/aaditya06/video/upload/v1751956660/tnlk6kclifcljafjvvls.mp4",
-          "thumbnail": "https://res.cloudinary.com/aaditya06/video/upload/so_auto/tnlk6kclifcljafjvvls.jpg?_a=BAMAK+M20",
-          "title": "Cyberpunk 2077 (2user1)",
-          "description": "Live Wallpaper (2user1)",
-          "views": 3,
-          "duration": 30.033333,
-          "isPublished": true,
-          "owner": "686cad45a41b4cd3b897909b",
-          "createdAt": "2025-07-08T06:37:41.972Z",
-          "updatedAt": "2025-07-11T06:19:39.784Z",
-          "__v": 0
-        }
-      },
-      {
-        "_id": "686cbd25a41b4cd3b89790da",
-        "video": {
-          "_id": "686cbd25a41b4cd3b89790da",
-          "videoFile": "http://res.cloudinary.com/aaditya06/video/upload/v1751956771/syca8w6az8rlyja1nsjn.mp4",
-          "thumbnail": "https://res.cloudinary.com/aaditya06/video/upload/so_auto/syca8w6az8rlyja1nsjn.jpg?_a=BAMAK+M20",
-          "title": "Cyberpunk 2077 (2user2)",
-          "description": "Live Wallpaper (2user2)",
+          "_id": "686cbd11a41b4cd3b89790d7",
+          "videoFile": "http://res.cloudinary.com/aaditya06/video/upload/v1751956750/oj8rsus4wppq4s9qythi.mp4",
+          "thumbnail": "https://res.cloudinary.com/aaditya06/video/upload/so_auto/oj8rsus4wppq4s9qythi.jpg?_a=BAMAK+M20",
+          "title": "Cyberpunk 2077 (1user2)",
+          "description": "Live Wallpaper (1user2)",
           "views": 0,
           "duration": 30.033333,
           "isPublished": true,
           "owner": "686cad83a41b4cd3b897909f",
-          "createdAt": "2025-07-08T06:39:33.233Z",
-          "updatedAt": "2025-07-08T06:39:33.233Z",
+          "createdAt": "2025-07-08T06:39:13.074Z",
+          "updatedAt": "2025-07-08T06:39:13.074Z",
           "__v": 0
-        }
+        },
+        "likedBy": "686cad45a41b4cd3b897909b",
+        "createdAt": "2025-09-04T05:27:28.947Z",
+        "updatedAt": "2025-09-04T05:27:28.947Z",
+        "__v": 0
       }
     ],
-    "totalDocs": 10,
+    "totalDocs": 2,
     "limit": 10,
     "page": 1,
     "totalPages": 1,
@@ -758,13 +652,16 @@ GET api/v1/likes/liked-videos
 
 ### Playlists Routes
 
-#### 1. Create Playlist
+#### 1. Create Playlist (Protected)
 
 ```bash
 POST api/v1/playlists/playlist/create-playlist
 ```
+
 ##### 📸 Screenshot
+
 ![Create Playlist](./src/images/Create-Playlist.png)
+
 ```json
 {
   "statusCode": 201,
@@ -783,7 +680,7 @@ POST api/v1/playlists/playlist/create-playlist
 }
 ```
 
-#### 2. Get User Playlists
+#### 2. Get User Playlists (Unprotected)
 
 ```bash
 GET api/v1/playlists/user-playlists/:userId
@@ -819,7 +716,7 @@ GET api/v1/playlists/user-playlists/:userId
 }
 ```
 
-#### 3. Get Playlist By ID
+#### 3. Get Playlist By ID (Unprotected)
 
 ```bash
 GET api/v1/playlists/playlist/:playlistId
@@ -843,7 +740,7 @@ GET api/v1/playlists/playlist/:playlistId
 }
 ```
 
-#### 4. Add Video to Playlist
+#### 4. Add Video to Playlist (Protected)
 
 ```bash
 POST api/v1/playlists/playlist/:playlistId/video/:videoId
@@ -867,7 +764,7 @@ POST api/v1/playlists/playlist/:playlistId/video/:videoId
 }
 ```
 
-#### 5. Remove Video from Playlist
+#### 5. Remove Video from Playlist (Protected)
 
 ```bash
 POST api/v1/playlists/playlist/:playlistId/video/:videoId
@@ -891,7 +788,7 @@ POST api/v1/playlists/playlist/:playlistId/video/:videoId
 }
 ```
 
-#### 6. Delete Playlist
+#### 6. Delete Playlist (Protected)
 
 ```bash
 DELETE api/v1/playlists/playlist/:playlistId
@@ -915,13 +812,16 @@ DELETE api/v1/playlists/playlist/:playlistId
 }
 ```
 
-#### 7. Update Playlist
+#### 7. Update Playlist (Protected)
 
 ```bash
 DELETE api/v1/playlists/playlist/:playlistId
 ```
+
 ##### 📸 Screenshot
+
 ![Update Playlist](./src/images/Update-Playlist.png)
+
 ```json
 {
   "statusCode": 200,
@@ -942,7 +842,7 @@ DELETE api/v1/playlists/playlist/:playlistId
 
 ### Dashboard Routes
 
-#### 1. Get Channel Stats
+#### 1. Get Channel Stats (Protected)
 
 ```bash
 GET api/v1/dashboard/channel-stats
@@ -964,7 +864,7 @@ GET api/v1/dashboard/channel-stats
 }
 ```
 
-#### 2. Get Channel Videos
+#### 2. Get Channel Videos (Protected)
 
 ```bash
 GET api/v1/dashboard/channel-videos
@@ -1010,7 +910,7 @@ GET api/v1/dashboard/channel-videos
 
 ### Subscriptions Routes
 
-#### 1. Get Subscribers
+#### 1. Get Subscribers (Unprotected)
 
 ```bash
 GET api/v1/subscriptions/subscribers/:channelId
@@ -1053,7 +953,7 @@ GET api/v1/subscriptions/subscribers/:channelId
 }
 ```
 
-#### 2. Toggle Subscription
+#### 2. Toggle Subscription (Protected)
 
 ```bash
 POST api/v1/subscriptions/:channelId
@@ -1075,7 +975,7 @@ POST api/v1/subscriptions/:channelId
 }
 ```
 
-#### 3. Get Subscribed Channels
+#### 3. Get Subscribed Channels (Protected)
 
 ```bash
 GET api/v1/subscriptions/subscribed-channels/:subscriberId
@@ -1140,13 +1040,16 @@ GET api/v1/subscriptions/subscribed-channels/:subscriberId
 
 ### Tweets Routes
 
-#### 1. Create Tweet
+#### 1. Create Tweet (Protected)
 
 ```bash
 POST api/v1/tweets
 ```
+
 ##### 📸 Screenshot
+
 ![Create Tweet](./src/images/Create-Tweet.png)
+
 ```json
 {
   "statusCode": 201,
@@ -1163,7 +1066,7 @@ POST api/v1/tweets
 }
 ```
 
-#### 2. Get User Tweets
+#### 2. Get User Tweets (Unprotected)
 
 ```bash
 GET api/v1/tweets/:userId
@@ -1203,13 +1106,16 @@ GET api/v1/tweets/:userId
 }
 ```
 
-#### 3. Update Tweet
+#### 3. Update Tweet (Protected)
 
 ```bash
 PATCH api/v1/tweets/:tweetId
 ```
+
 ##### 📸 Screenshot
+
 ![Update Tweet](./src/images/Update-Tweet.png)
+
 ```json
 {
   "statusCode": 200,
@@ -1226,7 +1132,7 @@ PATCH api/v1/tweets/:tweetId
 }
 ```
 
-#### 4. Delete Tweet
+#### 4. Delete Tweet (Protected)
 
 ```bash
 DELETE api/v1/tweets/:tweetId
@@ -1250,13 +1156,16 @@ DELETE api/v1/tweets/:tweetId
 
 ### Videos Routes
 
-#### 1. Get All Videos
+#### 1. Get All Videos (Unprotected)
 
 ```bash
 GET api/v1/videos?query=cyber
 ```
+
 ##### 📸 Screenshot
+
 ![Get All Videos](./src/images/Get-All-Videos.png)
+
 ```json
 {
   "statusCode": 200,
@@ -1418,13 +1327,16 @@ GET api/v1/videos?query=cyber
 }
 ```
 
-#### 2. Publish Video
+#### 2. Publish Video (Protected)
 
 ```bash
 POST api/v1/videos/publish-video
 ```
+
 ##### 📸 Screenshot
+
 ![Publish Video](./src/images/Publish-Video.png)
+
 ```json
 {
   "statusCode": 201,
@@ -1447,7 +1359,7 @@ POST api/v1/videos/publish-video
 }
 ```
 
-### 3. Get Video By ID
+### 3. Get Video By ID (Unprotected)
 
 ```bash
 GET api/v1/videos/:videoId
@@ -1475,13 +1387,16 @@ GET api/v1/videos/:videoId
 }
 ```
 
-#### 4. Update Video
+#### 4. Update Video (Protected)
 
 ```bash
 PATCH api/v1/videos/:videoId
 ```
+
 ##### 📸 Screenshot
+
 ![Update Video](./src/images/Update-Video.png)
+
 ```json
 {
   "statusCode": 200,
@@ -1504,7 +1419,7 @@ PATCH api/v1/videos/:videoId
 }
 ```
 
-#### 5. Delete Video
+#### 5. Delete Video (Protected)
 
 ```bash
 DELETE api/v1/videos/:videoId
@@ -1532,7 +1447,7 @@ DELETE api/v1/videos/:videoId
 }
 ```
 
-#### 6. Toggle Video Publish Status
+#### 6. Toggle Video Publish Status (Protected)
 
 ```bash
 PATCH api/v1/videos/toggle-publish-status/:videoId
